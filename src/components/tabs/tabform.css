@@ -1,0 +1,31 @@
+.wrapper{
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+.tabs{
+    display: flex;
+    align-items: center;
+}
+.tabItem{
+    padding: 10px;
+    margin: 2px;
+    text-align: center;
+    font-weight: 400;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.selectedItem{
+    background-color: rgb(80, 193, 245);
+}
+.form-box{
+    position: absolute;
+    left: 0;
+    height: 390px;
+    width: 50%;
+    margin: 4px;
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 8px;
+}

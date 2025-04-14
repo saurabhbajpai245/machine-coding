@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 const Countdown = () => {
-    const [timer, setTimer] = useState(5);
+    const [timer, setTimer] = useState(3900);
     const [isRunning, setIsRuning] = useState(false);
 
     useEffect(() => {
@@ -31,10 +31,17 @@ const Countdown = () => {
     const resumeTimer = () => {
         setIsRuning(true);
     }
-
+    const formatTime = (seconds) => {
+        const hour = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const sec = seconds % 60;
+        return `${hour < 10 ? '0' : ''}${hour}:${minutes < 10 ? '0': ''}${minutes}:${sec < 10 ? '0' : ''}${sec}`
+    }
   return (
     <div>
-        <div>{timer}</div>
+        <div>
+            <div>{formatTime(timer)}</div>
+        </div>
         <div>
             <button onClick={startTimer}>{} Start</button>
             <button onClick={resumeTimer}>Resume</button>
